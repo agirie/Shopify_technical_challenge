@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+</head>
+
+<body>
+
+  <h2>Welcome to the Inventory Manager!</h2>
+  <p>Add an item to your inventory:</p>
+
+  <body>
+
+
+    <input type="text" name="text" id="input" />
+
+    <button onclick="pushData();"> add </button>
+    <p>(Click on an item in the list to edit or delete them from the list)</p>
+    <p>My inventory:</p>
+    <p id="pText" onclick="option()"></p>
+
+
+    <script>
+      // create an array
+      var myArr = [];
+      // this function is used to prompt the user to edit or delete items from the Inventory
+      //the function also displays the contents of the inventory
+      function pushData() {
+        // get value from the input text
+        var inputText = document.getElementById('input').value;
+        // add data to the array
+        myArr.push(inputText);
+        // display array data
+        var html = "";
+        //takes the length of myArr and puts it into 'html'
+        // orders each element into list form
+        for (var i = 0; i < myArr.length; i++) {
+          html += "<li>" + myArr[i] + "</li>";
+        }
+        // prints the contents of html
+        document.getElementById('pText').innerHTML = html;
+      }
+      //This function should display a propmt with two options (edit and delete)
+      // should display "Would you like to:" "edit"(button 1) "delete"(button 2)
+      //however I could not figure it out yet,, still trying
+      function option() {
+        alert("Would you like to:");
+      }
+    </script>
+
+  </body>
+
+
+</html>
